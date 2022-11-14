@@ -42,7 +42,7 @@ fastify.get('/users', (request, reply) => {
   const result = Object.values(users).filter((users) => { users[filter] === filter || users[filter] === value;
   });
   if (!filter || !value) {
-    return reply.send(Object.values(users));
+    return Object.values(users);
   }
   reply.send(result);
 });
